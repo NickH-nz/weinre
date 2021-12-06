@@ -487,9 +487,9 @@ To update the weinre dependencies, use
         <chmod file="${OUT}/files/${ARCH-BIN}/weinre" perm="+x"/>
 
         <!-- ant's zip task doesn't preserve permission bits -->
-        <exec executable="zip" dir="${OUT}/files">
-            <arg value="-q"/>
-            <arg value="-r"/>
+        <exec executable="7z" dir="${OUT}/files">
+            <arg value="a"/>
+            <arg value="-tzip"/>
             <arg value="../archives/${ARCH-BIN}.zip"/>
             <arg value="${ARCH-BIN}"/>
         </exec>
@@ -515,9 +515,9 @@ To update the weinre dependencies, use
         </copy>
 
         <!-- ant's zip task doesn't preserve permission bits -->
-        <exec executable="zip" dir="${OUT}/files">
-            <arg value="-q"/>
-            <arg value="-r"/>
+        <exec executable="7z" dir="${OUT}/files">
+            <arg value="a"/>
+            <arg value="-tzip"/>
             <arg value="../archives/${ARCH-DOC}.zip"/>
             <arg value="${ARCH-DOC}"/>
         </exec>
@@ -546,9 +546,9 @@ To update the weinre dependencies, use
             </fileset>
         </copy>
 
-        <exec executable="zip" dir="${OUT}/files">
-            <arg value="-q"/>
-            <arg value="-r"/>
+        <exec executable="7z" dir="${OUT}/files">
+            <arg value="a"/>
+            <arg value="-tzip"/>
             <arg value="../archives/${ARCH-SRC}.zip"/>
             <arg value="${ARCH-SRC}"/>
         </exec>
