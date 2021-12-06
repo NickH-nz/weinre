@@ -18,7 +18,7 @@ optionDefaults = {
   boundHost: 'localhost',
   verbose: false,
   debug: false,
-  readTimeout: 5
+  readTimeout: 1000
 };
 
 exports.run = function() {
