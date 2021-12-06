@@ -106,7 +106,7 @@ relative module names.
 
     htmlFileName = os.path.join(OutDir, htmlFile)
 
-    htmlFile = file(htmlFileName, "w")
+    htmlFile = open(htmlFileName, "w")
     htmlFile.write("\n".join(contents))
     htmlFile.close()
 
@@ -142,11 +142,11 @@ def processDir(dir, path=None, modules=None):
         oFileName = "%s%s" % (oFileName, AMDExtension)
 
         if False:
-            print "processing:   %s" % fullEntry
-            print "   oFileName: %s" % oFileName
+            print("processing:   %s" % fullEntry)
+            print("   oFileName: %s" % oFileName)
             continue
 
-        iFile = file(iFileName)
+        iFile = open(iFileName)
         contents = iFile.read()
         iFile.close()
 
@@ -174,7 +174,7 @@ def processDir(dir, path=None, modules=None):
             except:
                 error("error creating output directory '%s'" % oDirName)
 
-        oFile = file(oFileName, "w")
+        oFile = open(oFileName, "w")
         oFile.write(newContents)
         oFile.close()
 
@@ -187,13 +187,13 @@ def processDir(dir, path=None, modules=None):
 #-------------------------------------------------------------------------------
 def log(message):
     if Quiet: return
-    print "%s: %s" % (PROGRAM, message)
+    print("%s: %s" % (PROGRAM, message))
 
 #-------------------------------------------------------------------------------
 #
 #-------------------------------------------------------------------------------
 def error(message):
-    print "%s: %s" % (PROGRAM, message)
+    print("%s: %s" % (PROGRAM, message))
     exit(1)
 
 #-------------------------------------------------------------------------------

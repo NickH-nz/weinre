@@ -138,7 +138,7 @@ def min(script):
 #--------------------------------------------------------------------
 def log(message):
     message = "%s: %s" % (PROGRAM_NAME, message)
-    print >>sys.stderr, message
+    sys.stderr.write(message)
 
 #--------------------------------------------------------------------
 def error(message):

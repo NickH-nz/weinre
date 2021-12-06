@@ -50,7 +50,7 @@ def main():
         oFileName = args[1]
 
     # read input
-    iFile = file(iFileName)
+    iFile = open(iFileName)
     content = iFile.read()
     iFile.close()
 
@@ -77,7 +77,7 @@ def main():
     if oFileName == "<stdout>":
         oFile = sys.stdout
     else:
-        oFile = file(oFileName,"w")
+        oFile = open(oFileName,"w")
 
     oFile.write(jsonModule)
 
@@ -402,7 +402,7 @@ def clean(content):
 #--------------------------------------------------------------------
 def log(message):
     message = "%s: %s" % (PROGRAM_NAME, message)
-    print >>sys.stderr, message
+    sys.stderr.write(message)
 
 #--------------------------------------------------------------------
 def error(message):
