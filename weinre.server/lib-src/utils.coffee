@@ -180,8 +180,8 @@ Error.prepareStackTrace = (error, structuredStackTrace) ->
         file = utils.alignRight(file, longestFile)
         line = utils.alignLeft( line, longestLine)
         
-        funcName = func.displayName ||
-                   func.name || 
+        funcName = func?.displayName ||
+                   func?.name || 
                    callSite.getFunctionName()
                    callSite.getMethodName()
                    '???'
