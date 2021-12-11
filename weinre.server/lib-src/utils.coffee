@@ -182,8 +182,8 @@ Error.prepareStackTrace = (error, structuredStackTrace) ->
         
         funcName = func?.displayName ||
                    func?.name || 
-                   callSite.getFunctionName()
-                   callSite.getMethodName()
+                   callSite.getFunctionName() ||
+                   callSite.getMethodName() ||
                    '???'
         
         if funcName == "Module._compile"
